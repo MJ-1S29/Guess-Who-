@@ -1,3 +1,9 @@
+<?php
+    $seed = $_GET['seed'];
+    $team = $_GET['team'];
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,43 +11,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guess Who?</title>
     <style>
-        #in{
+        input{
             width: 290px;
             height: 50px;
             font-size: 30px;
             display: inline;
         }
+        div{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: start;
+        }
+        .type{
+            width: 80px;
+            height: 55px;
+            font-size: 20px;
+        }
     </style>
 </head>
-<body>
+<body style="background-color: #FFCD20;">
     
+    <div>
     <!-- <canvas id="canvas1" width="179" height="301" onclick="no(1)"></canvas> -->
-    <canvas id="canvas1" width="179" height="301" onclick="no(1)"></canvas>
-    <canvas id="canvas2" width="179" height="301" onclick="no(2)"></canvas>
-    <canvas id="canvas3" width="179" height="301" onclick="no(3)"></canvas>
-    <canvas id="canvas4" width="179" height="301" onclick="no(4)"></canvas>
-    <canvas id="canvas5" width="179" height="301" onclick="no(5)"></canvas>
-    <canvas id="canvas6" width="179" height="301" onclick="no(6)"></canvas>
-    <canvas id="canvas7" width="179" height="301" onclick="no(7)"></canvas>
-    <canvas id="canvas8" width="179" height="301" onclick="no(8)"></canvas>
+    <div>
+    <canvas id="1" width="179" height="301" onclick="no(1)"></canvas>
+    <canvas id="2" width="179" height="301" onclick="no(2)"></canvas>
+    <canvas id="3" width="179" height="301" onclick="no(3)"></canvas>
+    <canvas id="4" width="179" height="301" onclick="no(4)"></canvas>
+    <canvas id="5" width="179" height="301" onclick="no(5)"></canvas>
+    <canvas id="6" width="179" height="301" onclick="no(6)"></canvas>
+    <canvas id="7" width="179" height="301" onclick="no(7)"></canvas>
+    <canvas id="8" width="179" height="301" onclick="no(8)"></canvas>
     <input type="text" id="in" placeholder="시드를 입력해 주세요">
+    <button onclick="seeding()" style="width: 100px; height: 55px; font-size: 25px;">제출</button>
+    </div>
+    <div>
+    <canvas id="9" width="179" height="301" onclick="no(9)"></canvas>
+    <canvas id="10" width="179" height="301" onclick="no(10)"></canvas>
+    <canvas id="11" width="179" height="301" onclick="no(11)"></canvas>
+    <canvas id="12" width="179" height="301" onclick="no(12)"></canvas>
+    <canvas id="13" width="179" height="301" onclick="no(13)"></canvas>
+    <canvas id="14" width="179" height="301" onclick="no(14)"></canvas>
+    <canvas id="15" width="179" height="301" onclick="no(15)"></canvas>
+    <canvas id="16" width="179" height="301" onclick="no(16)"></canvas>
+    <p style="font-size: 30px;"> <input type="radio" name="team" value="b" id="b" style="width:30px; height:30px;"> Blue </p>
+    <p style="font-size: 30px;"> <input type="radio" name="team" value="o" id="o" style="width:30px; height:30px;"> Orange </p>
+    </div>
+    <div>
+    <canvas id="17" width="179" height="301" onclick="no(17)"></canvas>
+    <canvas id="18" width="179" height="301" onclick="no(18)"></canvas>
+    <canvas id="19" width="179" height="301" onclick="no(19)"></canvas>
+    <canvas id="20" width="179" height="301" onclick="no(20)"></canvas>
+    <canvas id="21" width="179" height="301" onclick="no(21)"></canvas>
+    <canvas id="22" width="179" height="301" onclick="no(22)"></canvas>
+    <canvas id="23" width="179" height="301" onclick="no(23)"></canvas>
+    <canvas id="24" width="179" height="301" onclick="no(24)"></canvas>
     <br>
-    <canvas id="canvas9" width="179" height="301" onclick="no(9)"></canvas>
-    <canvas id="canvas10" width="179" height="301" onclick="no(10)"></canvas>
-    <canvas id="canvas11" width="179" height="301" onclick="no(11)"></canvas>
-    <canvas id="canvas12" width="179" height="301" onclick="no(12)"></canvas>
-    <canvas id="canvas13" width="179" height="301" onclick="no(13)"></canvas>
-    <canvas id="canvas14" width="179" height="301" onclick="no(14)"></canvas>
-    <canvas id="canvas15" width="179" height="301" onclick="no(15)"></canvas>
-    <canvas id="canvas16" width="179" height="301" onclick="no(16)"></canvas><br>
-    <canvas id="canvas17" width="179" height="301" onclick="no(17)"></canvas>
-    <canvas id="canvas18" width="179" height="301" onclick="no(18)"></canvas>
-    <canvas id="canvas19" width="179" height="301" onclick="no(19)"></canvas>
-    <canvas id="canvas20" width="179" height="301" onclick="no(20)"></canvas>
-    <canvas id="canvas21" width="179" height="301" onclick="no(21)"></canvas>
-    <canvas id="canvas22" width="179" height="301" onclick="no(22)"></canvas>
-    <canvas id="canvas23" width="179" height="301" onclick="no(23)"></canvas>
-    <canvas id="canvas24" width="179" height="301" onclick="no(24)"></canvas><br>
+    <input type="text" id="ans" placeholder="추측한 정답은?">
+    <button onclick="answer()" style="width: 100px; height: 55px; font-size: 25px;">제출</button>
+
+    </div>
+    <div>
+        <asdf style="font-size: 37px; margin-right: 20px; margin-left: 20px;"> 한번에 제외하기 :</asdf>
+        <br>
+        <button onclick="exclude('blackhair')" class="type">흑발</button>
+        <button onclick="exclude('oranghair')" class="type">적발</button>
+        <button onclick="exclude('blondhair')" class="type">금발</button>
+        <button onclick="exclude('whitehair')" class="type">백발</button>
+        <button onclick="exclude('brownhair')" class="type">갈발</button>
+        <button onclick="exclude('wemen')" class="type">여성</button>
+        <button onclick="exclude('hat')" class="type">모자</button>
+        <button onclick="exclude('glasses')" class="type">안경</button>
+        <button onclick="exclude('blueeye')" class="type">벽안</button>
+        <button onclick="exclude('flushing')" class="type">홍조</button>
+        <button onclick="exclude('bald')" class="type">대머리</button>
+        <button onclick="exclude('mustache')" class="type">콧수염</button>
+        <button onclick="exclude('beard')" class="type">턱수염</button>
+    </div>
+    <div>
+        <asdf style="font-size: 37px; margin-right: 20px; margin-left: 20px;"> 한번에 포함하기 :</asdf>
+        <br>
+        <button onclick="include('blackhair')" class="type">흑발</button>
+        <button onclick="include('oranghair')" class="type">적발</button>
+        <button onclick="include('blondhair')" class="type">금발</button>
+        <button onclick="include('whitehair')" class="type">백발</button>
+        <button onclick="include('brownhair')" class="type">갈발</button>
+        <button onclick="include('wemen')" class="type">여성</button>
+        <button onclick="include('hat')" class="type">모자</button>
+        <button onclick="include('glasses')" class="type">안경</button>
+        <button onclick="include('blueeye')" class="type">벽안</button>
+        <button onclick="include('flushing')" class="type">홍조</button>
+        <button onclick="include('bald')" class="type">대머리</button>
+        <button onclick="include('mustache')" class="type">콧수염</button>
+        <button onclick="include('beard')" class="type">턱수염</button>
+    </div>
+    
+    </div>
     <script src="./Guesswho.js"></script>
 </body>
 </html>
