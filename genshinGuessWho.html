@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guess Who?</title>
+    <title>Genshin Impact Guess Who?</title>
     <style>
         input{
             width: 290px;
@@ -65,44 +65,40 @@
     <button onclick="answer()" style="width: 100px; height: 55px; font-size: 25px;">제출</button>
 
     </div>
-    <div id="exclude">
+    <div>
         <asdf style="font-size: 37px; margin-right: 20px; margin-left: 20px;"> 한번에 제외하기 :</asdf>
         <br>
-        <button onclick="exclude('blackhair')" class="type">흑발</button>
-        <button onclick="exclude('oranghair')" class="type">적발</button>
-        <button onclick="exclude('blondhair')" class="type">금발</button>
-        <button onclick="exclude('whitehair')" class="type">백발</button>
-        <button onclick="exclude('brownhair')" class="type">갈발</button>
-        <button onclick="exclude('wemen')" class="type">여성</button>
-        <button onclick="exclude('hat')" class="type">모자</button>
-        <button onclick="exclude('glasses')" class="type">안경</button>
-        <button onclick="exclude('blueeye')" class="type">벽안</button>
-        <button onclick="exclude('flushing')" class="type">홍조</button>
-        <button onclick="exclude('bald')" class="type">대머리</button>
-        <button onclick="exclude('mustache')" class="type">콧수염</button>
-        <button onclick="exclude('beard')" class="type">턱수염</button>
+        <button onclick="exclude('mondstadt')" class="type">몬드</button>
+        <button onclick="exclude('liyue')" class="type">리월</button>
+        <button onclick="exclude('inazuma')" class="type">이나즈마</button>
+        <button onclick="exclude('sumeru')" class="type">수메르</button>
+        <button onclick="exclude('fontaine')" class="type">폰타인</button>
+        <button onclick="exclude('snezhunaya')" class="type">스네즈나야</button>
+        <button onclick="exclude('sword')" class="type">한손검</button>
+        <button onclick="exclude('claymore')" class="type">양손검</button>
+        <button onclick="exclude('polearm')" class="type">장병기</button>
+        <button onclick="exclude('catalyst')" class="type">법구</button>
+        <button onclick="exclude('bow')" class="type">활</button>
         <button onclick="exclude('all')" class="type">전체</button>
     </div>
-    <div id="include">
+    <div>
         <asdf style="font-size: 37px; margin-right: 20px; margin-left: 20px;"> 한번에 포함하기 :</asdf>
         <br>
-        <button onclick="include('blackhair')" class="type">흑발</button>
-        <button onclick="include('oranghair')" class="type">적발</button>
-        <button onclick="include('blondhair')" class="type">금발</button>
-        <button onclick="include('whitehair')" class="type">백발</button>
-        <button onclick="include('brownhair')" class="type">갈발</button>
-        <button onclick="include('wemen')" class="type">여성</button>
-        <button onclick="include('hat')" class="type">모자</button>
-        <button onclick="include('glasses')" class="type">안경</button>
-        <button onclick="include('blueeye')" class="type">벽안</button>
-        <button onclick="include('flushing')" class="type">홍조</button>
-        <button onclick="include('bald')" class="type">대머리</button>
-        <button onclick="include('mustache')" class="type">콧수염</button>
-        <button onclick="include('beard')" class="type">턱수염</button>
+        <button onclick="include('mondstadt')" class="type">몬드</button>
+        <button onclick="include('liyue')" class="type">리월</button>
+        <button onclick="include('inazuma')" class="type">이나즈마</button>
+        <button onclick="include('sumeru')" class="type">수메르</button>
+        <button onclick="include('fontaine')" class="type">폰타인</button>
+        <button onclick="include('snezhunaya')" class="type">스네즈나야</button>
+        <button onclick="include('sword')" class="type">한손검</button>
+        <button onclick="include('claymore')" class="type">양손검</button>
+        <button onclick="include('polearm')" class="type">장병기</button>
+        <button onclick="include('catalyst')" class="type">법구</button>
+        <button onclick="include('bow')" class="type">활</button>
         <button onclick="include('all')" class="type">전체</button>
     </div>
     
     </div>
-    <script src="./Guesswho.js"></script>
+    <script src="./genshinGuesswho.js"></script>
 </body>
 </html>

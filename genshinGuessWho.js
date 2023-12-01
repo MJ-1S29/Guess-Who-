@@ -6,7 +6,7 @@ function yes(n) {
     let ctx = canvas.getContext("2d");
 
     let image = new Image();
-    image.src = "./guesswho.jpg";
+    image.src = "./genshin.jpg";
 
     image.onload = function() {
         if(n<=8){
@@ -30,7 +30,7 @@ function no(n) {
     let ctx = canvas.getContext("2d");
 
     let image = new Image();
-    image.src = "./guesswho_no.jpg";
+    image.src = "./genshin_no.jpg";
 
     image.onload = function() {
         if(n<=8){
@@ -52,44 +52,38 @@ function no(n) {
 function exclude(type){
    
     console.log(type);
-    if(type == "blackhair"){
-        no(1); no(4); no(16); no(19); no(24);
+    if(type == "mondstadt"){
+        no(3); no(13); no(18); no(19); no(24);
     }
-    else if(type == "oranghair"){
-        no(2); no(6); no(8); no(11); no(13);
+    else if(type == "liyue"){
+        no(1); no(2); no(6); no(8); no(11); no(20); no(23);
     }
-    else if(type == "blondhair"){
-        no(3); no(7); no(9); no(10); no(14);
+    else if(type == "inazuma"){
+        no(7); no(9); no(24);
     }
-    else if(type == "whitehair"){
-        no(12); no(17); no(18); no(22); no(23);
+    else if(type == "sumeru"){
+        no(5); no(10); no(12); no(14); no(15); no(16); 
     }
-    else if(type == "brownhair"){
-        no(5); no(15); no(20); no(21);
+    else if(type == "fontaine"){
+        no(4); no(17);
     }
-    else if(type == "wemen"){
-        no(3); no(4); no(8); no(15); no(23);
+    else if(type == "snezhunaya"){
+        no(22);
     }
-    else if(type == "hat"){
-        no(5); no(8); no(10); no(12); no(15);
+    else if(type == "sword"){
+        no(4); no(8); no(10); no(21); no(24);
     }
-    else if(type == "glasses"){
-        no(8); no(14); no(17); no(22); no(24);
+    else if(type == "claymore"){
+        no(3); no(11); no(13); no(15); no(20);
     }
-    else if(type == "blueeye"){
-        no(2); no(3); no(18); no(21); no(24);
+    else if(type == "polearm"){
+        no(1); no(2); no(7); no(16); no(23);
     }
-    else if(type == "flushing"){
-        no(3); no(6); no(19); no(21); no(23);
+    else if(type == "catalyst"){
+        no(12); no(14); no(17); no(19);
     }
-    else if(type == "mustache"){
-        no(1); no(2); no(7); no(16); no(20);
-    }
-    else if(type == "beard"){
-        no(6); no(9); no(19); no(20);
-    }
-    else if(type == "bald"){
-        no(6); no(13); no(20); no(22); no(24);
+    else if(type == "bow"){
+        no(5); no(6); no(9); no(18); no(22);
     }
     else if(type == "all"){
         for(let i = 1;i<=24;i++){
@@ -102,44 +96,38 @@ function exclude(type){
 function include(type){
    
     console.log(type);
-    if(type == "blackhair"){
-        yes(1); yes(4); yes(16); yes(19); yes(24);
+    if(type == "mondstadt"){
+        yes(3); yes(13); yes(18); yes(19); yes(24);
     }
-    else if(type == "oranghair"){
-        yes(2); yes(6); yes(8); yes(11); yes(13);
+    else if(type == "liyue"){
+        yes(1); yes(2); yes(6); yes(8); yes(11); yes(20); yes(23);
     }
-    else if(type == "blondhair"){
-        yes(3); yes(7); yes(9); yes(10); yes(14);
+    else if(type == "inazuma"){
+        yes(7); yes(9); yes(24);
     }
-    else if(type == "whitehair"){
-        yes(12); yes(17); yes(18); yes(22); yes(23);
+    else if(type == "sumeru"){
+        yes(5); yes(10); yes(12); yes(14); yes(15); yes(16); 
     }
-    else if(type == "brownhair"){
-        yes(5); yes(15); yes(20); yes(21);
+    else if(type == "fontaine"){
+        yes(4); yes(17);
     }
-    else if(type == "wemen"){
-        yes(3); yes(4); yes(8); yes(15); yes(23);
+    else if(type == "snezhunaya"){
+        yes(22);
     }
-    else if(type == "hat"){
-        yes(5); yes(8); yes(10); yes(12); yes(15);
+    else if(type == "sword"){
+        yes(4); yes(8); yes(10); yes(21); yes(24);
     }
-    else if(type == "glasses"){
-        yes(8); yes(14); yes(17); yes(22); yes(24);
+    else if(type == "claymore"){
+        yes(3); yes(11); yes(13); yes(15); yes(20);
     }
-    else if(type == "blueeye"){
-        yes(2); yes(3); yes(18); yes(21); yes(24);
+    else if(type == "polearm"){
+        yes(1); yes(2); yes(7); yes(16); yes(23);
     }
-    else if(type == "flushing"){
-        yes(3); yes(6); yes(19); yes(21); yes(23);
+    else if(type == "catalyst"){
+        yes(12); yes(14); yes(17); yes(19);
     }
-    else if(type == "mustache"){
-        yes(1); yes(2); yes(7); yes(16); yes(20);
-    }
-    else if(type == "beard"){
-        yes(6); yes(9); yes(19); yes(20);
-    }
-    else if(type == "bald"){
-        yes(6); yes(13); yes(20); yes(22); yes(24);
+    else if(type == "bow"){
+        yes(5); yes(6); yes(9); yes(18); yes(22);
     }
     else if(type == "all"){
         for(let i = 1;i<=24;i++){
@@ -154,17 +142,13 @@ let Banswernum;
 let Oanswernum;
 let Banswer;
 let Oanswer;
-let chara = ["ooo","alex","Alfred","Anita","Anne","Bernard","bill","charles","claire","david","eric","frans","george","herman","joe","maria","max","paul","peter","philip","richard","robert","sam","susan","tom"];
+let chara = ["ooo","호두","소","노엘","푸리나","타이나리","야란","라이덴쇼군","치치","고로","닐루","북두","나히다","유라","방랑자","데히야","사이노","라이오슬리","벤티","클레","중운","여행자","타르탈리아","종려","키라라"];
 
-let genshinseed = 0;
 
 function seeding(){
     let seed = document.getElementById("in").value;
 
-    if(seed == "genshin"){
-        genshinseed = 1;
-        return;
-    }
+
     Banswernum = parseInt((seed*125790) % 24 + 1);
     Oanswernum = parseInt((seed*12341234) % 24 + 1);
     console.log(Banswernum + ", " + Oanswernum);
@@ -194,14 +178,6 @@ function answer(){
     
     teamNodeList.forEach((node) => {if(node.checked)  {team = node.value;}})
 
-    if(genshinseed == 1){
-        if(ans == "impact"){
-            genshinmod = 1;
-            alert("Genshin Impact mod on!");
-            location.href = "genshinGuessWho.html";
-            return;
-        }
-    }
     if(team == 'b'){
         if(ans.toLowerCase() == Oanswer){
             alert("정답입니다!");
