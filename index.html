@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guess Who?</title>
     <style>
-        input{
+        input{ /* 입력란 스타일 */
             width: 290px;
             height: 50px;
             font-size: 30px;
             display: inline;
         }
-        div{
+        div{ /* 줄 나누기 위한 div 스타일 */
             display: flex;
             flex-wrap: wrap;
             align-items: start;
         }
-        .type{
+        .type{ /* 한번에 ~ 버튼 스타일 */
             width: 80px;
             height: 55px;
             font-size: 20px;
@@ -28,7 +28,7 @@
     <div>
     <!-- <canvas id="canvas1" width="179" height="301" onclick="no(1)"></canvas> -->
     <div>
-    <canvas id="1" width="179" height="301" onclick="no(1)"></canvas>
+    <canvas id="1" width="179" height="301" onclick="no(1)"></canvas> <!-- 캐릭터 그림 -->
     <canvas id="2" width="179" height="301" onclick="no(2)"></canvas>
     <canvas id="3" width="179" height="301" onclick="no(3)"></canvas>
     <canvas id="4" width="179" height="301" onclick="no(4)"></canvas>
@@ -36,8 +36,8 @@
     <canvas id="6" width="179" height="301" onclick="no(6)"></canvas>
     <canvas id="7" width="179" height="301" onclick="no(7)"></canvas>
     <canvas id="8" width="179" height="301" onclick="no(8)"></canvas>
-    <input type="text" id="in" placeholder="시드를 입력해 주세요">
-    <button onclick="seeding()" style="width: 100px; height: 55px; font-size: 25px;">제출</button>
+    <input type="text" id="in" placeholder="시드를 입력해 주세요"> <!-- 시드 입력란 -->
+    <button onclick="seeding()" style="width: 100px; height: 55px; font-size: 25px;">제출</button> <!-- 시드 입력 버튼 -->
     </div>
     <div>
     <canvas id="9" width="179" height="301" onclick="no(9)"></canvas>
@@ -48,7 +48,7 @@
     <canvas id="14" width="179" height="301" onclick="no(14)"></canvas>
     <canvas id="15" width="179" height="301" onclick="no(15)"></canvas>
     <canvas id="16" width="179" height="301" onclick="no(16)"></canvas>
-    <p style="font-size: 30px;"> <input type="radio" name="team" value="b" id="b" style="width:30px; height:30px;"> Blue </p>
+    <p style="font-size: 30px;"> <input type="radio" name="team" value="b" id="b" style="width:30px; height:30px;"> Blue </p>   <!-- 팀 선택 라디오 버튼 -->
     <p style="font-size: 30px;"> <input type="radio" name="team" value="o" id="o" style="width:30px; height:30px;"> Orange </p>
     </div>
     <div>
@@ -61,15 +61,15 @@
     <canvas id="23" width="179" height="301" onclick="no(23)"></canvas>
     <canvas id="24" width="179" height="301" onclick="no(24)"></canvas>
     <br>
-    <input type="text" id="ans" placeholder="추측한 정답은?">
-    <button onclick="answer()" style="width: 100px; height: 55px; font-size: 25px;">제출</button>
+    <input type="text" id="ans" placeholder="추측한 정답은?"> <!-- 정답 제출란 -->
+    <button onclick="answer()" style="width: 100px; height: 55px; font-size: 25px;">제출</button> <!-- 정답 제출 버튼 -->
 
     </div>
     <div id="exclude">
         <asdf style="font-size: 37px; margin-right: 20px; margin-left: 20px;"> 한번에 제외하기 :</asdf>
         <br>
-        <button onclick="exclude('blackhair')" class="type">흑발</button>
-        <button onclick="exclude('oranghair')" class="type">적발</button>
+        <button onclick="exclude('blackhair')" class="type">흑발</button> <!-- 한번에 제외 버튼 -->
+        <button onclick="exclude('oranghair')" class="type">적발</button> <!-- exclude함수에 특징을 입력하여 해당하는 캐릭터 제외 -->
         <button onclick="exclude('blondhair')" class="type">금발</button>
         <button onclick="exclude('whitehair')" class="type">백발</button>
         <button onclick="exclude('brownhair')" class="type">갈발</button>
@@ -86,8 +86,8 @@
     <div id="include">
         <asdf style="font-size: 37px; margin-right: 20px; margin-left: 20px;"> 한번에 포함하기 :</asdf>
         <br>
-        <button onclick="include('blackhair')" class="type">흑발</button>
-        <button onclick="include('oranghair')" class="type">적발</button>
+        <button onclick="include('blackhair')" class="type">흑발</button> <!-- 한번에 제외 버튼 -->
+        <button onclick="include('oranghair')" class="type">적발</button> <!-- include함수에 특징을 입력하여 해당하는 캐릭터 포함 -->
         <button onclick="include('blondhair')" class="type">금발</button>
         <button onclick="include('whitehair')" class="type">백발</button>
         <button onclick="include('brownhair')" class="type">갈발</button>

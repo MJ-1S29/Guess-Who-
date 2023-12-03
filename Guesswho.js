@@ -1,14 +1,14 @@
 let genshinmod = 0;
 
 
-function yes(n) {
+function yes(n) { //포함
     let canvas = document.getElementById(n);
     let ctx = canvas.getContext("2d");
 
     let image = new Image();
     image.src = "./guesswho.jpg";
 
-    image.onload = function() {
+    image.onload = function() { //번호에 따라 사진을 잘라서 캔버스에 출력하는 코드
         if(n<=8){
             ctx.drawImage(image, (n - 1 - 0 * 8) * 179 , 0 * 301, 179, 301, 0, 0, 179, 301);
         }
@@ -20,7 +20,7 @@ function yes(n) {
         }
     }
 
-    canvas.setAttribute("onclick", "no(" + n + ")" );
+    canvas.setAttribute("onclick", "no(" + n + ")" ); //다시 제외할 수 있도록 onclick의 내용 변경
 }
 
 
@@ -32,7 +32,7 @@ function no(n) {
     let image = new Image();
     image.src = "./guesswho_no.jpg";
 
-    image.onload = function() {
+    image.onload = function() { //번호에 따라 사진을 잘라서 캔버스에 출력하는 코드
         if(n<=8){
             ctx.drawImage(image, (n - 1 - 0 * 8) * 179 , 0 * 301, 179, 301, 0, 0, 179, 301);
         }
@@ -44,7 +44,7 @@ function no(n) {
         }
     }
 
-    canvas.setAttribute("onclick", "yes(" + n + ")" );
+    canvas.setAttribute("onclick", "yes(" + n + ")" ); //다시 포함할 수 있도록 onclick의 내용 변경
 }
 
 
@@ -52,7 +52,7 @@ function no(n) {
 function exclude(type){
    
     console.log(type);
-    if(type == "blackhair"){
+    if(type == "blackhair"){ //인자로 받아온 특징(type)에 따라 해당하는 번호들을 제외함
         no(1); no(4); no(16); no(19); no(24);
     }
     else if(type == "oranghair"){
@@ -91,7 +91,7 @@ function exclude(type){
     else if(type == "bald"){
         no(6); no(13); no(20); no(22); no(24);
     }
-    else if(type == "all"){
+    else if(type == "all"){ //1~24번을 반복문을 통해 전부 제외함
         for(let i = 1;i<=24;i++){
             no(i);
         }
@@ -102,7 +102,7 @@ function exclude(type){
 function include(type){
    
     console.log(type);
-    if(type == "blackhair"){
+    if(type == "blackhair"){ //인자로 받아온 특징(type)에 따라 해당하는 번호들을 포함함
         yes(1); yes(4); yes(16); yes(19); yes(24);
     }
     else if(type == "oranghair"){
@@ -141,7 +141,7 @@ function include(type){
     else if(type == "bald"){
         yes(6); yes(13); yes(20); yes(22); yes(24);
     }
-    else if(type == "all"){
+    else if(type == "all"){ //1~24번을 반복문을 통해 전부 포함함
         for(let i = 1;i<=24;i++){
             yes(i);
         }
@@ -155,31 +155,31 @@ let Oanswernum;
 let Banswer;
 let Oanswer;
 let chara = ["ooo","alex","Alfred","Anita","Anne","Bernard","bill","charles","claire","david","eric","frans","george","herman","joe","maria","max","paul","peter","philip","richard","robert","sam","susan","tom"];
-
+// ^ 캐릭터들의 이름을 하나의 배열 안에 저장
 let genshinseed = 0;
 
 function seeding(){
-    let seed = document.getElementById("in").value;
+    let seed = document.getElementById("in").value; //입력한 시드 가져오기
 
     if(seed == "genshin"){
         genshinseed = 1;
         return;
     }
-    Banswernum = parseInt((seed*125790) % 24 + 1);
+    Banswernum = parseInt((seed*125790) % 24 + 1);    //시드에 큰 값을 곱하고 24로 나눈 나머지에 1을 더하여 1~24의 난수 생성을 통해 정답이 될 캐릭터 결정
     Oanswernum = parseInt((seed*12341234) % 24 + 1);
-    console.log(Banswernum + ", " + Oanswernum);
+    console.log(Banswernum + ", " + Oanswernum); //선택된 캐릭터의 번호를 콘솔에 출력 (디버깅용)
 
-    Banswer = chara[Banswernum];
+    Banswer = chara[Banswernum]; //선택된 캐릭터의 번호를 통해 그 캐릭터의 이름을 변수에 저장
     Oanswer = chara[Oanswernum];
 
-    console.log(Banswer + ", " + Oanswer);
+    console.log(Banswer + ", " + Oanswer); //선택된 캐릭터의 이름을 콘솔에 출력 (디버깅용)
 
-    let teamNodeList = document.getElementsByName('team');
+    let teamNodeList = document.getElementsByName('team'); 
     
-    teamNodeList.forEach((node) => {if(node.checked)  {team = node.value;}})
+    teamNodeList.forEach((node) => {if(node.checked)  {team = node.value;}}) //노드를 이동 시키며 어떤 팀을 선택했는지 확인
 
     if(team == 'b'){
-        alert("당신의 캐릭터 : " + Banswer);
+        alert("당신의 캐릭터 : " + Banswer); //선택한 팀에 따라 자신의 캐릭터 (상대방이 맞춰야 할 캐릭터)를 알려줌
     }
     if(team == 'o'){
         alert("당신의 캐릭터 : " + Oanswer);
@@ -188,22 +188,15 @@ function seeding(){
 }
 
 function answer(){
-    let ans = document.getElementById("ans").value;
+    let ans = document.getElementById("ans").value; //입력한 정답 가져 오기
 
     let teamNodeList = document.getElementsByName('team');
     
     teamNodeList.forEach((node) => {if(node.checked)  {team = node.value;}})
 
-    if(genshinseed == 1){
-        if(ans == "impact"){
-            genshinmod = 1;
-            alert("Genshin Impact mod on!");
-            location.href = "genshinGuessWho.html";
-            return;
-        }
-    }
+    
     if(team == 'b'){
-        if(ans.toLowerCase() == Oanswer){
+        if(ans.toLowerCase() == Oanswer){ //팀에 따라 정답 확인 후 alert
             alert("정답입니다!");
         }
         else alert("오답입니다!");
@@ -214,11 +207,19 @@ function answer(){
         }
         else alert("오답입니다!");
     }
+    if(genshinseed == 1){
+        if(ans == "impact"){
+            genshinmod = 1;
+            alert("Genshin Impact mod on!");
+            location.href = "genshinGuessWho.html"; //시드를 genshin으로 하고 답을 impact로 했을 때 다른 html파일을 엶
+            return;
+        }
+    }
     
 }
 
 
 
 for(let i = 1;i<=24;i++){
-    yes(i);
+    yes(i); //시작할 때 모든 캐릭터를 포함된 상태로 로드
 }
